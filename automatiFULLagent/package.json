@@ -1,0 +1,21 @@
+{
+  "name": "agentflow-ai",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Agentic AI Automation Platform monorepo",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "dev:5002": "PORT=5002 NEXT_PUBLIC_API_URL=http://localhost:5002/api NEXT_PUBLIC_SOCKET_URL=http://localhost:5002 concurrently \"npm run dev --workspace server\" \"npm run dev --workspace client\"",
+    "dev:client": "npm run dev --workspace client",
+    "dev:server": "npm run dev --workspace server",
+    "lint": "npm run lint --workspace client",
+    "start": "npm run start --workspace server"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
